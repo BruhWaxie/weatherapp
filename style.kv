@@ -5,12 +5,19 @@
 
         MDTopAppBar:
             title: "Weather"
+        MDLabel:
+            id: content_text
+            text: 'Content'
+            halign: 'center'
         MDBoxLayout:
+            padding: 20
             MDTextField:
+                id: city
                 hint_text: "Місто"
                 mode: "fill"
             MDIconButton:
+                id: search_btn
                 icon: "magnify"
-                md_bg_color: 'purple'
-                icon_size: "64sp"
+                icon_size: "32sp"
+                on_press: root.search()
             
