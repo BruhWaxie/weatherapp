@@ -1,3 +1,35 @@
+<WeatherCard>:
+    padding: 4
+    size_hint: (0.9,1)
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    MDBoxLayout:
+        size_hint: (1,1)
+        orientation: "vertical"
+        padding: '20sp'
+        pos_hint: {'center_y': 0.5}
+
+        AsyncImage:
+            id: image
+            source: 'https://openweathermap.org/img/wn/10d@2x.png'
+            size_hint: (None, None)
+            width: '100sp'
+            height: '100sp'
+            pos_hint: {'center_x':0.5}
+        MDLabel:
+            id: temp
+            text: '25'
+            font_style: 'H4'
+            halign: 'center'
+        MDLabel:
+            id: desc
+            text: 'Переважно сонячно'
+            font_style: 'Subtitle1'
+            halign: 'center'
+        MDLabel:
+            id: temp_like
+            text: 'Відчувається як: 30'
+            font_style: 'Subtitle2'
+
 <HomeScreen>:
     MDBoxLayout:
         orientation: "vertical"
@@ -5,19 +37,31 @@
 
         MDTopAppBar:
             title: "Weather"
-        MDLabel:
-            id: content_text
-            text: 'Content'
-            halign: 'center'
+        
         MDBoxLayout:
-            padding: 20
-            MDTextField:
-                id: city
-                hint_text: "Місто"
-                mode: "fill"
-            MDIconButton:
-                id: search_btn
-                icon: "magnify"
-                icon_size: "32sp"
-                on_press: root.search()
-            
+            size_hint: (1, 0.7)
+            orientation: "vertical"
+            spacing: '20sp'
+            pos_hint: {'center_x': 0.5}
+            padding: '25sp'
+            MDBoxLayout:
+                padding: '20sp'
+                spacing: '20sp'
+                size_hint: (1, None)
+                height: '40sp'
+                MDTextField:
+                    id: city
+                    hint_text: "Місто"
+                    mode: "fill"
+                MDIconButton:
+                    id: search_btn
+                    icon: "magnify"
+                    icon_size: "32sp"
+                    on_press: root.search()
+            MDCarousel:
+                id: carousel
+                direction: 'right'
+                size_hint: (1, 1)
+                WeatherCard:
+                
+                

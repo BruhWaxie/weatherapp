@@ -3,7 +3,12 @@ from kivymd.app import MDApp
 from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import MDScreen
 from settings import *
+from kivymd.uix.card import MDCard
 import requests
+
+class WeatherCard(MDCard):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
 class HomeScreen(MDScreen):
     def __init__(self, *args, **kwargs):
