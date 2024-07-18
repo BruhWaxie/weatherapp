@@ -16,6 +16,11 @@
             height: '100sp'
             pos_hint: {'center_x':0.5}
         MDLabel:
+            id: date
+            text: 'Зараз'
+            font_style: 'Body1'
+            halign: 'center'
+        MDLabel:
             id: temp
             text: '25'
             font_style: 'H4'
@@ -28,6 +33,14 @@
         MDLabel:
             id: temp_like
             text: 'Відчувається як: 30'
+            font_style: 'Subtitle2'
+        MDLabel:
+            id: w_speed
+            text: 'Швидкість вітру 5 м/с'
+            font_style: 'Subtitle2'
+        MDLabel:
+            id: humidity
+            text: 'Вологість:'
             font_style: 'Subtitle2'
 
 <HomeScreen>:
@@ -59,9 +72,9 @@
                     icon_size: "32sp"
                     on_press: root.search()
             MDCarousel:
-                id: carousel
+                id: weather_carousel
                 direction: 'right'
                 size_hint: (1, 1)
-                WeatherCard:
+                
                 
                 
